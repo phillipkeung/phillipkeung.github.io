@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phillip K - Personal Website</title>
+    <title>Phillip Keung</title>
     <style>
         * {
             margin: 0;
@@ -12,33 +12,82 @@
         }
         
         body {
-            font-family: 'Times New Roman', serif;
+			font-family: 'Verdana', serif;
             line-height: 1.6;
             color: #000;
             background-color: #fff;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
             padding: 40px 0;
             margin-bottom: 60px;
             border-bottom: 2px solid #000;
+            gap: 40px;
+        }
+        
+        .photo-container {
+            flex-shrink: 0;
+        }
+        
+        .photo {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #000;
+            object-fit: cover;
+            display: block;
+            background-color: #f5f5f5;
+        }
+        
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        
+        .header-text {
+            flex: 1;
         }
         
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: normal;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             letter-spacing: 2px;
+            line-height: 1.1;
         }
         
         .subtitle {
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-style: italic;
             color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .header-contact {
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        
+        .header-contact a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+        }
+        
+        .header-contact a:hover {
+            border-bottom: none;
         }
         
         .section {
@@ -85,39 +134,44 @@
             text-align: justify;
         }
         
-        .contact {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 2px solid #000;
-            margin-top: 40px;
-        }
-        
-        .contact p {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-        
-        .contact a {
-            color: #000;
-            text-decoration: underline;
-        }
-        
-        .contact a:hover {
-            text-decoration: none;
-        }
-        
         strong {
             font-weight: bold;
         }
         
+        /* Mobile Layout */
         @media (max-width: 768px) {
             body {
                 padding: 20px 15px;
             }
             
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            .header-text {
+                text-align: center;
+            }
+            
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
                 letter-spacing: 1px;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .photo-placeholder {
+                width: 120px;
+                height: 120px;
+                font-size: 0.8em;
             }
             
             .item-description {
@@ -125,50 +179,123 @@
             }
         }
         
+        /* Tablet Layout */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            header {
+                gap: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+        
         @media print {
             body {
                 background: white;
                 color: black;
+                max-width: none;
+                padding: 20px;
             }
             
-            .contact a {
+            header {
+                gap: 30px;
+            }
+            
+            .photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .photo-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .header-contact a {
                 text-decoration: none;
+                border: none;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>PHILLIP K</h1>
-        <p class="subtitle">Researcher, Innovator, Developer</p>
+        <div class="photo-container">
+            <!-- Replace 'photo.jpg' with your actual photo filename -->
+            <img src="photo.jpeg" alt="Phillip Keung" class="photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-placeholder" style="display: none;">
+                Photo<br>150×150px
+            </div>
+        </div>
+        
+        <div class="header-text">
+            <h1>Phillip Keung</h1>
+            <div class="header-contact">
+                
+				
+                <p><a href="https://www.linkedin.com/in/phillip-keung-9a270b2/">LinkedIn</a></p>
+				<p><a href="https://scholar.google.com/citations?user=VdI1yDcAAAAJ&hl=en">Google Scholar</a></p>
+            </div>
+        </div>
     </header>
-
+	<section class="section">
+		<p>I am a final year PhD student advised by Professor <a href=https://nasmith.github.io/>Noah A. Smith</a> at the University of Washington. My research interests are in multilinguality and efficient training and inference with LLMs. Previously, I was employed at Amazon as a senior applied scientist.</p>
+		<p><br></p>
+		<p>I can be reached at <code>phillipk999 @ [the usual Google email domain]</code>.</p>
+	</section>
     <!-- Publications Section -->
     <section class="section">
-        <h2>Publications</h2>
+        <h2>Selected Publications</h2>
         
         <div class="item">
-            <h3>Advanced Machine Learning Techniques in Data Analysis</h3>
-            <div class="item-meta">Journal of Computer Science, 2024</div>
-            <div class="item-description">
-                A comprehensive study on implementing advanced ML algorithms for large-scale data processing. This research demonstrates novel approaches to improving accuracy and efficiency in predictive modeling.
-            </div>
+            <h3>Summarization-Based Document IDs for Generative Retrieval with Language Models</h3>
+            <div class="item-meta">A Li, D Cheng, P Keung, J Kasai, NA Smith | Workshop on WikiNLP @ EMNLP, 2024</div>
         </div>
         
         <div class="item">
-            <h3>Optimizing Cloud Infrastructure for Scalable Applications</h3>
-            <div class="item-meta">International Conference on Cloud Computing, 2023</div>
-            <div class="item-description">
-                Presented findings on cost-effective cloud architecture patterns that improve application performance while reducing operational overhead by up to 40%.
-            </div>
+            <h3>NarrowBERT: Accelerating masked language model pretraining and inference</h3>
+            <div class="item-meta">H Li, P Keung, D Cheng, J Kasai, NA Smith | ACL, 2023</div>
         </div>
         
         <div class="item">
-            <h3>Security Frameworks for Modern Web Applications</h3>
-            <div class="item-meta">Cybersecurity Review, 2023</div>
-            <div class="item-description">
-                Developed and evaluated new security protocols for protecting user data in distributed web applications, with focus on privacy-preserving authentication methods.
-            </div>
+            <h3>The Engage corpus: A social media dataset for text-based recommender systems</h3>
+            <div class="item-meta">D Cheng, K Yan, P Keung, NA Smith | LREC, 2022</div>
+        </div>
+        
+        <div class="item">
+            <h3>Domain mismatch doesn't always prevent cross-lingual transfer learning</h3>
+            <div class="item-meta">D Edmiston, P Keung, NA Smith | LREC, 2022</div>
+        </div>
+        
+        <div class="item">
+            <h3>Unsupervised bitext mining and translation via self-trained contextual embeddings</h3>
+            <div class="item-meta">P Keung, J Salazar, Y Lu, NA Smith | Transactions of the Association for Computational Linguistics, 2021</div>
+        </div>
+        
+        <div class="item">
+            <h3>The multilingual Amazon reviews corpus</h3>
+            <div class="item-meta">P Keung, Y Lu, G Szarvas, NA Smith | EMNLP, 2020</div>
+        </div>
+        
+        <div class="item">
+            <h3>Don't use English dev: On the zero-shot cross-lingual evaluation of contextual embeddings</h3>
+            <div class="item-meta">P Keung, Y Lu, J Salazar, V Bhardwaj | EMNLP, 2020</div>
+        </div>
+        
+        <div class="item">
+            <h3>Improving non-autoregressive neural machine translation with monolingual data</h3>
+            <div class="item-meta">J Zhou, P Keung | ACL, 2020</div>
+        </div>
+        
+        <div class="item">
+            <h3>Adversarial learning with contextual embeddings for zero-resource cross-lingual classification and NER</h3>
+            <div class="item-meta">P Keung, Y Lu, V Bhardwaj | EMNLP, 2019</div>
+        </div>
+        
+        <div class="item">
+            <h3>A neural interlingua for multilingual machine translation</h3>
+            <div class="item-meta">Y Lu, P Keung, F Ladhak, V Bhardwaj, S Zhang, J Sun | WMT, 2018</div>
         </div>
     </section>
 
@@ -177,19 +304,23 @@
         <h2>Patents</h2>
         
         <div class="item">
-            <h3>System and Method for Automated Code Quality Assessment</h3>
-            <div class="item-meta">Patent Pending - US Application No. 18/123456, Filed: March 2024</div>
-            <div class="item-description">
-                An innovative system that uses machine learning to automatically evaluate code quality, identify potential bugs, and suggest improvements in real-time during the development process.
-            </div>
+            <h3>Accurate individual queue level metric forecasting for virtual contact center queues with insufficient data, using models trained at higher granularity level</h3>
+            <div class="item-meta">Y Li, W Niu, TC Lung, YC Lin, TB Johnston, M Donthi, RJ Rodriguez, P Keung, et al. | US Patent 12,073,340, 2024</div>
+        </div>
+        
+		<div class="item">
+            <h3>An action recommender system for facilitating real time communication</h3>
+            <div class="item-meta">Patent pending, 2022</div>
+        </div>
+		
+        <div class="item">
+            <h3>Automated service agents</h3>
+            <div class="item-meta">T Labarre, P Keung, Y Lu, R Parvathaneni | US Patent 10,382,370, 2019</div>
         </div>
         
         <div class="item">
-            <h3>Distributed Algorithm for Real-time Data Synchronization</h3>
-            <div class="item-meta">US Patent No. 11,987,654, Granted: January 2024</div>
-            <div class="item-description">
-                A novel approach to maintaining data consistency across distributed systems with minimal latency, particularly useful for financial and healthcare applications requiring real-time updates.
-            </div>
+            <h3>Language-based solution agent</h3>
+            <div class="item-meta">VSR Bhardwaj, JK Kramer, P Keung, K Chahal, T Agarwal, J Sun, et al. | US Patent 10,013,416, 2018</div>
         </div>
     </section>
 
@@ -198,41 +329,23 @@
         <h2>Work Experience</h2>
         
         <div class="item">
-            <h3>Senior Software Engineer</h3>
-            <div class="item-meta">TechCorp Inc. | January 2022 - Present</div>
+            <h3>PhD Student and Researcher</h3>
+            <div class="item-meta">University of Washington | April 2020 - Present</div>
             <div class="item-description">
-                Lead development of microservices architecture serving 10M+ users daily. Implemented CI/CD pipelines that reduced deployment time by 60%. Mentor junior developers and drive technical decision-making for the platform team.
+                Conducting NLP research in the ARK Lab at the University of Washington under the supervision of Professor Noah A. Smith.
                 <br><br>
-                <strong>Key Technologies:</strong> Python, AWS, Kubernetes, PostgreSQL, Redis
             </div>
         </div>
         
         <div class="item">
-            <h3>Software Developer</h3>
-            <div class="item-meta">StartupXYZ | June 2020 - December 2021</div>
+            <h3>Senior Applied Scientist</h3>
+            <div class="item-meta">Amazon | Oct 2014 - Jan 2023</div>
             <div class="item-description">
-                Built scalable web applications from ground up using modern frameworks. Collaborated with cross-functional teams to deliver features that increased user engagement by 150%. Optimized database queries resulting in 40% performance improvement.
+                Engaged in various customer-facing projects involving NLP applications, including speech, translation, dialogue systems, etc. Worked in multiple divisions within the company, including retail, Alexa, and AWS.
                 <br><br>
-                <strong>Key Technologies:</strong> React, Node.js, MongoDB, Docker
             </div>
         </div>
         
-        <div class="item">
-            <h3>Research Assistant</h3>
-            <div class="item-meta">University Research Lab | September 2019 - May 2020</div>
-            <div class="item-description">
-                Conducted research on distributed systems and published findings in peer-reviewed journals. Developed prototypes for testing theoretical concepts and collaborated with PhD students on data analysis projects.
-                <br><br>
-                <strong>Key Technologies:</strong> Java, Apache Spark, R, LaTeX
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <p>Email: <a href="mailto:phillip@example.com">phillip@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/phillipk999">github.com/phillipk999</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/phillipk999">linkedin.com/in/phillipk999</a></p>
     </section>
 </body>
 </html>
